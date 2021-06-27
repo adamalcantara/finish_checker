@@ -10,9 +10,8 @@ function searchValue() {
 
     //Check if searchValue is blank, and tell user to input a search term
     if (searchValue == "") {
-        let pleaseInput = "Please input a search term."
-        console.log(pleaseInput);
-        blankSearch.append(pleaseInput);
+        blankSearch.append("Please input a search term.");
+        return false;
     }
 }
 
