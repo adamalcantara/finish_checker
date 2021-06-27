@@ -13,6 +13,7 @@ function searchValue() {
         blankSearch.append("Please input a search term.");
         return false;
     }
+    
 }
 
 //Call the searchValue function when the search button is clicked
