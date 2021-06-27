@@ -13,17 +13,60 @@ function searchValue() {
         blankSearch.append("Please input a search term.");
         return false;
     }
+    //Call the get weather function
     getWeather(searchValue);
+    //Set the search box value to nothing after button click
+    document.querySelector("#search-value").value = "";
 }
 
+//Function to get the current weather
 function getWeather(searchValue) {
+    //API URL
     let apiURL = "https://api.openweathermap.org/data/2.5/weather?q=" + searchValue + "&appid=" + apiKey + "&units=imperial";
 
+    //Fetch the data from the API, and print it in the console
     fetch(apiURL)
         .then(function (response) {
             return response.json()
         }).then(function (data) {
             console.log(data);
+
+            //Get the city name, temperature, and humidity
+            let cityName = data.name;
+            let temperature = data.main.temp;
+            let humidity = data.main.humidity;
+
+            //Get the city name, and append it to the page
+            let cityNameEl = document.createElement("h2");
+            $(cityNameEl).text(cityName);
+            informationEl.append(cityNameEl);
+
+            //create an empty div for the lacquer
+            let lacquerDiv = document.createElement("div");
+            lacquerDiv.classList.add("lacquerDiv");
+
+            //create elements for the title and the text
+            let lacquerTitle = document.createElement("h3");
+            let lacquerEl = document.createElement("p");
+
+            //if statement for appending information to the page
+            if (humidity < 65 && temperature < 90) {
+                lacquerEl.classList.add("lacquerGood");
+                lacquerEl.append("Go ahead");
+            } else {
+                lacquerEl.classList.add("lacquerBad");
+                lacquerEl.append("Don't you dare");
+            }
+
+            //Append the title to the lacquerTitle H2
+            lacquerTitle.append("Nitrocellulose Lacquer:");
+
+            //Append the information and title to the empty div
+            lacquerDiv.append(lacquerTitle);
+            lacquerDiv.append(lacquerEl);
+
+            //Append the information to the page
+            informationEl.append(lacquerDiv);
         })
 }
 
