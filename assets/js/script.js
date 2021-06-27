@@ -13,7 +13,18 @@ function searchValue() {
         blankSearch.append("Please input a search term.");
         return false;
     }
-    
+    getWeather(searchValue);
+}
+
+function getWeather(searchValue) {
+    let apiURL = "https://api.openweathermap.org/data/2.5/weather?q=" + searchValue + "&appid=" + apiKey + "&units=imperial";
+
+    fetch(apiURL)
+        .then(function (response) {
+            return response.json()
+        }).then(function (data) {
+            console.log(data);
+        })
 }
 
 //Call the searchValue function when the search button is clicked
