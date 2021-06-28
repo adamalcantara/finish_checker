@@ -19,6 +19,24 @@ function searchValue() {
     document.querySelector("#search-value").value = "";
 }
 
+//Geolocation test begins here
+let x = document.getElementById("geotest")
+
+function currentLocation() {
+    
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        alert("Geolocation is not supported");
+    }
+}
+
+function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude;
+}
+
+currentLocation();
+
 //Function to get the current weather
 function getWeather(searchValue) {
     informationEl.innerHTML = "";
