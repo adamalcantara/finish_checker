@@ -21,6 +21,7 @@ function searchValue() {
 
 //Function to get the current weather
 function getWeather(searchValue) {
+    informationEl.innerHTML = "";
     //API URL
     let apiURL = "https://api.openweathermap.org/data/2.5/weather?q=" + searchValue + "&appid=" + apiKey + "&units=imperial";
 
