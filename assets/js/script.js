@@ -22,6 +22,7 @@ function searchValue() {
 //Geolocation test begins here
 let x = document.getElementById("geotest")
 
+//Current location function
 function currentLocation() {
     
     if (navigator.geolocation) {
@@ -34,21 +35,30 @@ function currentLocation() {
 function showPosition(position) {
     // x.innerHTML = "Latitude: " + position.coords.latitude;
 
+    //Set informationEl to nothing, then make an API call and print it in the console
     informationEl.innerHTML = "";
-    let positionURL = "https://api.openweathermap.org/data/2.5/find?lat=" + position.coords.latitude + "&lon=" + position.coords.longitude + "&cnt=3&appid=" + apiKey + "&units=imperial";
+    let positionURL = "https://api.openweathermap.org/data/2.5/find?lat=" + position.coords.latitude + "&lon=" + position.coords.longitude + "&cnt=1&appid=" + apiKey + "&units=imperial";
     console.log(positionURL)
 
+    //Fetch the data from the API
     fetch(positionURL)
         .then(function (response) {
             return response.json()
         }).then(function (data) {
             console.log(data);
+        
+            let positionName = data.list[0].name;
+            console.log(positionName);
+            let positionTemp = data.list[0].main.temp;
+            console.log(positionTemp);
+            let positionHum = data.list[0].main.humidity;
+            console.log(positionHum);
         })
 }
 
 
 
-currentLocation();
+
 
 //Function to get the current weather
 function getWeather(searchValue) {
@@ -105,3 +115,6 @@ function getWeather(searchValue) {
 
 //Call the searchValue function when the search button is clicked
 searchBtn.addEventListener("click", searchValue);
+
+//Run current location function by default
+currentLocation();
