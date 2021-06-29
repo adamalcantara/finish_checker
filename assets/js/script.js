@@ -67,6 +67,7 @@ function getWeather(searchValue) {
             //create elements for the title and the text
             let lacquerTitle = document.createElement("h3");
             let lacquerEl = document.createElement("p");
+            lacquerEl.classList.add("lacquerEl")
 
             //if statement for appending information to the page
             if (humidity < 65 && temperature < 90) {
