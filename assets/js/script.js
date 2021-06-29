@@ -37,6 +37,13 @@ function showPosition(position) {
     informationEl.innerHTML = "";
     let positionURL = "https://api.openweathermap.org/data/2.5/find?lat=" + position.coords.latitude + "&lon=" + position.coords.longitude + "&cnt=3&appid=" + apiKey + "&units=imperial";
     console.log(positionURL)
+
+    fetch(positionURL)
+        .then(function (response) {
+            return response.json()
+        }).then(function (data) {
+            console.log(data);
+        })
 }
 
 
@@ -47,7 +54,7 @@ currentLocation();
 function getWeather(searchValue) {
     informationEl.innerHTML = "";
     //API URL
-    let apiURL = "https://api.openweathermap.org/data/2.5/weather?q=" + searchValue + "&appid=" + apiKey + "&units=imperial";
+    let apiURL = "https://api.openweathermap.org/data/2.5/weather?zip=" + searchValue + "&appid=" + apiKey + "&units=imperial";
 
     //Fetch the data from the API, and print it in the console
     fetch(apiURL)
