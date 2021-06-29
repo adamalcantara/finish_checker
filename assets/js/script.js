@@ -32,8 +32,14 @@ function currentLocation() {
 }
 
 function showPosition(position) {
-    x.innerHTML = "Latitude: " + position.coords.latitude;
+    // x.innerHTML = "Latitude: " + position.coords.latitude;
+
+    informationEl.innerHTML = "";
+    let positionURL = "https://api.openweathermap.org/data/2.5/find?lat=" + position.coords.latitude + "&lon=" + position.coords.longitude + "&cnt=3&appid=" + apiKey + "&units=imperial";
+    console.log(positionURL)
 }
+
+
 
 currentLocation();
 
