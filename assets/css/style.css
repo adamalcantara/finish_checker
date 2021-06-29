@@ -13,3 +13,8 @@
 .lacquerBad {
     background-color: red;
 }
+
+footer {
+    position: fixed;
+    bottom: 0;
+}
