@@ -53,6 +53,10 @@ function showPosition(position) {
             console.log(positionTemp);
             let positionHum = data.list[0].main.humidity;
             console.log(positionHum);
+
+            let positionNameEl = document.createElement("h2");
+            $(positionNameEl).text(positionName);
+            informationEl.append(positionNameEl);
         })
 }
 
