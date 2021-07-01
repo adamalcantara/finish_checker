@@ -57,6 +57,10 @@ function showPosition(position) {
             let positionNameEl = document.createElement("h2");
             $(positionNameEl).text(positionName);
             informationEl.append(positionNameEl);
+
+            //create an empty div for the lacquer
+            let positionDiv = document.createElement("div");
+            positionDiv.classList.add("lacquerDiv");
         })
 }
 
