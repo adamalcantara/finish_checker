@@ -19,9 +19,6 @@ function searchValue() {
     document.querySelector("#search-value").value = "";
 }
 
-//Geolocation test begins here
-let x = document.getElementById("geotest")
-
 //Current location function
 function currentLocation() {
     
