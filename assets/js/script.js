@@ -61,6 +61,30 @@ function showPosition(position) {
             //create an empty div for the lacquer
             let positionDiv = document.createElement("div");
             positionDiv.classList.add("lacquerDiv");
+
+             //create elements for the title and the text
+             let lacquerTitle = document.createElement("h3");
+             let lacquerEl = document.createElement("p");
+             lacquerEl.classList.add("lacquerEl")
+ 
+             //if statement for appending information to the page
+             if (positionHum < 65 && positionTemp < 90) {
+                 lacquerEl.classList.add("lacquerGood");
+                 lacquerEl.append("Go ahead");
+             } else {
+                 lacquerEl.classList.add("lacquerBad");
+                 lacquerEl.append("Don't you dare");
+             }
+ 
+             //Append the title to the lacquerTitle H3
+             lacquerTitle.append("Nitrocellulose Lacquer:");
+ 
+             //Append the information and title to the empty div
+             positionDiv.append(lacquerTitle);
+             positionDiv.append(lacquerEl);
+ 
+             //Append the information to the page
+             informationEl.append(positionDiv);
         })
 }
 
