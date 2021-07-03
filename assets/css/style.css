@@ -65,7 +65,10 @@ h3 {
 }
 
 #bottom {
-    margin-top: auto;
+    position: fixed;
+    bottom: 20px;
+    right: 40%;
+    left: 40%;
 }
 
 footer {
