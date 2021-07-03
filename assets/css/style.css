@@ -64,9 +64,13 @@ h3 {
     color: #8c1414;
 }
 
+#bottom {
+    margin-top: auto;
+}
+
 footer {
-    position: fixed;
-    bottom: 0;
+    display: flex;
+    justify-content: center;
 }
 
 #searchbox {
@@ -76,4 +80,5 @@ footer {
 
 #blanksearch {
     text-align: center;
+    margin-top: 10px;
 }
