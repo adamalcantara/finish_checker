@@ -71,6 +71,11 @@ h3 {
     left: 40%;
 }
 
+#searchby {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
 #searchbtn {
     background-color: #CC9562;
     border: 1px solid black;
