@@ -20,6 +20,7 @@ header {
 #heading {
     font-size: 20px;
     margin-top: 30px;
+    text-align: center;
 }
 
 #information {
@@ -104,4 +105,16 @@ h3 {
 footer {
     display: flex;
     justify-content: center;
+}
+
+/* iPhone 8 Plus media query */
+@media screen and (max-width: 414px) {
+    #logo {
+        width: 300px
+    }
+
+    #bottom {
+        left: 0;
+        right: 0;
+    }
 }
