@@ -44,6 +44,7 @@ function showPosition(position) {
         }).then(function (data) {
             console.log(data);
         
+            //Get the names and temperatures for the position from the geolocation
             let positionName = data.list[0].name;
             console.log(positionName);
             let positionTemp = data.list[0].main.temp;
